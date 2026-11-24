@@ -1,5 +1,5 @@
 cask "jadecode" do
-  version "0.1.3-alpha"
+  version "0.1.4-alpha"
   sha256 "debc1b701c321fb2ce54ec49dae7e0d3af2b5fd3648842ce25b7b02f3e1bf7dd"
 
   url "https://github.com/jadewisemann/jadecode/releases/download/v#{version}/jadecode-#{version}-macos-aarch64.dmg"
@@ -25,12 +25,12 @@ cask "jadecode" do
   binary "#{appdir}/jadecode.app/Contents/MacOS/jadecode-mcp"
 
   caveats <<~EOS
-    앱을 열기 전에 서버가 필요합니다. 다음 한 줄이 워크스페이스를 준비하고
-    서버를 백그라운드로 띄운 뒤 앱을 엽니다:
+    서버를 따로 띄울 필요가 없습니다. 앱을 열면 떠 있는 서버에 붙고,
+    없으면 앱 안에서 로컬 백엔드를 직접 띄웁니다.
 
-      jadecode run --open
+      open /Applications/jadecode.app
 
-    워크스페이스 기본 위치: ~/jc/work (바꾸려면 --ws <디렉터리>)
+    워크스페이스 기본 위치: ~/jc/work (없으면 자동으로 만듭니다)
     에이전트(claude·opencode·omp·pi)는 각자 설치·로그인이 필요합니다:
 
       jadecode agents
